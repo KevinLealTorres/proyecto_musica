@@ -12,6 +12,7 @@
       <module>ejbs</module>
       <module>ear</module>
       <module>site</module>
+      <module>site</module>
    </modules>
    <build>
       <pluginManagement>
@@ -22,6 +23,11 @@
                <configuration>
                   <unzipCommand>/usr/bin/unzip -o > err.txt</unzipCommand>
                </configuration>
+            </plugin>
+            <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-javadoc-plugin</artifactId>
+               <version>3.3.0</version>
             </plugin>
          </plugins>
       </pluginManagement>
@@ -49,6 +55,20 @@
             <artifactId>ejbs</artifactId>
             <version>1.0</version>
             <type>ejb</type>
+         </dependency>
+
+         <!-- Jakarta EE API -->
+         <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>11.0.0-M2</version>
+         </dependency>
+
+         <!-- Implementación de Jakarta Persistence (EclipseLink) -->
+         <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>org.eclipse.persistence.jpa</artifactId>
+            <version>4.0.2</version>
          </dependency>
       </dependencies>
    </dependencyManagement>
